@@ -1,11 +1,12 @@
 //
-//  RecipeManager.swift
+//  RecipeViewModel.swift
 //  FoodieSearch-rx
 //
 //  Created by Christian Leovido on 24/03/2020.
 //  Copyright © 2020 Christian Leovido. All rights reserved.
 //
 
+import Foundation
 import Foundation
 import Moya
 import RxSwift
