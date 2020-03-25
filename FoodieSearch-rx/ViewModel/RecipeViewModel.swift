@@ -7,19 +7,25 @@
 //
 
 import Foundation
-import Foundation
 import Moya
 import RxSwift
 import RxCocoa
 import RxMoya
 
-struct RecipeViewModel {
+struct RecipeViewModel: ViewModelBlueprint {
 
-    private let disposeBag = DisposeBag()
-    private let provider: MoyaProvider<RecipeService> = MoyaProvider(plugins: [NetworkLoggerPlugin()])
+    typealias AnyService = RecipeService
+    typealias Model = Recipe
 
-    let recipes: BehaviorRelay<[Recipe]> = BehaviorRelay(value: [])
-    let errorRecipesPublisher: PublishSubject<Error> = PublishSubject()
+    let disposeBag = DisposeBag()
+    let provider: MoyaProvider<RecipeService>
+
+    let dataSource: BehaviorRelay<[Recipe]> = BehaviorRelay(value: [])
+    let errorDataSourcePublisher: PublishSubject<Error> = PublishSubject()
+
+    init(provider: MoyaProvider<RecipeService> = MoyaProvider(plugins: [NetworkLoggerPlugin()])) {
+        self.provider = provider
+    }
 
     func getRecipes(page: Int, ingredients: String, query: String) {
 
@@ -27,22 +33,24 @@ struct RecipeViewModel {
             .debug("get recipes", trimOutput: true)
             .filterSuccessfulStatusAndRedirectCodes()
             .retry(2)
-            .subscribe(onSuccess: { response in
-
-                do {
-
-                    let recipes = try response.map([Recipe].self, atKeyPath: "results")
-
-                    self.recipes.accept(recipes)
-
-                } catch let error {
-                    self.errorRecipesPublisher.onNext(error)
+            .subscribe({ event in
+                switch event {
+                case .success(let response):
+                    self.decodeResponse(response: response)
+                case .error(let error):
+                    self.errorDataSourcePublisher.onNext(error)
                 }
-
-            }) { error in
-                self.errorRecipesPublisher.onNext(error)
-            }
+            })
         .disposed(by: disposeBag)
 
+    }
+
+    func decodeResponse(response: Response) {
+        do {
+            let recipes = try response.map([Recipe].self, atKeyPath: "results")
+            self.dataSource.accept(recipes)
+        } catch let error {
+            self.errorDataSourcePublisher.onNext(error)
+        }
     }
 }

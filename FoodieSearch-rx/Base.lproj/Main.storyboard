@@ -4,19 +4,20 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Search-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="RecipeViewController" customModule="FoodieSearch_rx" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RecipeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="RecipeViewController" customModule="FoodieSearch_rx" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jq2-2D-tRd">
-                                <rect key="frame" x="0.0" y="132" width="414" height="681"/>
+                                <rect key="frame" x="0.0" y="271" width="414" height="542"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RecipeCell" rowHeight="297" id="crx-ny-jXh" customClass="RecipeCell" customModule="FoodieSearch_rx" customModuleProvider="target">
@@ -26,86 +27,153 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="297"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kale soup with bread" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H0r-D6-dF0">
-                                                    <rect key="frame" x="20" y="11" width="386" height="45"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0cY-AK-Fvc">
+                                                    <rect key="frame" x="20" y="20" width="374" height="266"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZxI-AF-lxu">
+                                                            <rect key="frame" x="14" y="158" width="352" height="79"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="79" id="2lB-KI-fPC"/>
+                                                            </constraints>
+                                                            <string key="text">bay leaves, black pepper, beef broth, mint, sausage, garlic, kale, bread, potato, olive oil, red onions, red pepper flakes, salt</string>
+                                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredients" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pKv-0q-DoU">
+                                                            <rect key="frame" x="14" y="130" width="103" height="23"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="23" id="fJY-ge-7Gx"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="17"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kale soup with bread" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H0r-D6-dF0">
+                                                            <rect key="frame" x="14" y="20" width="352" height="102"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="352" id="8lV-K7-PP3"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="28"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="45" id="9PJ-vE-Xgf"/>
-                                                        <constraint firstAttribute="width" constant="386" id="eWA-cY-rcv"/>
+                                                        <constraint firstItem="H0r-D6-dF0" firstAttribute="leading" secondItem="0cY-AK-Fvc" secondAttribute="leading" constant="14" id="6VD-Vf-oEQ"/>
+                                                        <constraint firstItem="pKv-0q-DoU" firstAttribute="leading" secondItem="ZxI-AF-lxu" secondAttribute="leading" id="8PG-9v-1Hr"/>
+                                                        <constraint firstItem="H0r-D6-dF0" firstAttribute="trailing" secondItem="ZxI-AF-lxu" secondAttribute="trailing" id="TjE-cd-hc3"/>
+                                                        <constraint firstItem="pKv-0q-DoU" firstAttribute="top" secondItem="H0r-D6-dF0" secondAttribute="bottom" constant="8" id="Ybr-Mk-xNK"/>
+                                                        <constraint firstAttribute="bottom" secondItem="ZxI-AF-lxu" secondAttribute="bottom" constant="29" id="e15-VS-vWY"/>
+                                                        <constraint firstItem="H0r-D6-dF0" firstAttribute="top" secondItem="0cY-AK-Fvc" secondAttribute="top" constant="20" id="hFh-Fi-aTD"/>
+                                                        <constraint firstItem="H0r-D6-dF0" firstAttribute="trailing" secondItem="0cY-AK-Fvc" secondAttribute="trailingMargin" id="ngw-tt-DJg"/>
+                                                        <constraint firstItem="ZxI-AF-lxu" firstAttribute="top" secondItem="pKv-0q-DoU" secondAttribute="bottom" constant="5" id="oH0-kW-KHM"/>
+                                                        <constraint firstItem="H0r-D6-dF0" firstAttribute="leading" secondItem="pKv-0q-DoU" secondAttribute="leading" id="rqb-5D-NPN"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredients" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pKv-0q-DoU">
-                                                    <rect key="frame" x="20" y="64" width="91" height="17"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="17" id="dcE-8K-lUU"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZxI-AF-lxu">
-                                                    <rect key="frame" x="20" y="89" width="216" height="196"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="216" id="J9W-cp-abs"/>
-                                                    </constraints>
-                                                    <string key="text">bay leaves, black pepper, beef broth, mint, sausage, garlic, kale, bread, potato, olive oil, red onions, red pepper flakes, salt</string>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square.and.arrow.up.on.square.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Nhv-hq-sBJ">
-                                                    <rect key="frame" x="244" y="76.5" width="170" height="126"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="170" id="vzN-C6-gq1"/>
-                                                    </constraints>
-                                                </imageView>
+                                                </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottomMargin" secondItem="Nhv-hq-sBJ" secondAttribute="bottom" constant="86" id="3kP-Uv-uij"/>
-                                                <constraint firstItem="Nhv-hq-sBJ" firstAttribute="leading" secondItem="ZxI-AF-lxu" secondAttribute="trailing" constant="8" id="Dsv-P5-Yta"/>
-                                                <constraint firstItem="H0r-D6-dF0" firstAttribute="top" secondItem="pQf-aA-oXA" secondAttribute="topMargin" id="LHW-qG-lQJ"/>
-                                                <constraint firstItem="H0r-D6-dF0" firstAttribute="leading" secondItem="pQf-aA-oXA" secondAttribute="leadingMargin" id="Nop-bO-G6Z"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="ZxI-AF-lxu" secondAttribute="bottom" constant="1" id="Rxp-uj-mwR"/>
-                                                <constraint firstItem="Nhv-hq-sBJ" firstAttribute="top" secondItem="H0r-D6-dF0" secondAttribute="bottom" constant="23" id="Uw6-Ls-BQY"/>
-                                                <constraint firstItem="pKv-0q-DoU" firstAttribute="top" secondItem="H0r-D6-dF0" secondAttribute="bottom" constant="8" id="dH2-x7-FVT"/>
-                                                <constraint firstItem="H0r-D6-dF0" firstAttribute="leading" secondItem="pKv-0q-DoU" secondAttribute="leading" id="fba-ug-x2H"/>
-                                                <constraint firstItem="pKv-0q-DoU" firstAttribute="leading" secondItem="ZxI-AF-lxu" secondAttribute="leading" id="pjo-xb-RC4"/>
-                                                <constraint firstItem="ZxI-AF-lxu" firstAttribute="top" secondItem="pKv-0q-DoU" secondAttribute="bottom" constant="8" id="txR-5J-XqB"/>
+                                                <constraint firstItem="0cY-AK-Fvc" firstAttribute="bottom" secondItem="pQf-aA-oXA" secondAttribute="bottomMargin" id="Zqj-FK-0BO"/>
+                                                <constraint firstItem="0cY-AK-Fvc" firstAttribute="top" secondItem="pQf-aA-oXA" secondAttribute="topMargin" constant="9" id="jpO-kV-9Sn"/>
+                                                <constraint firstItem="0cY-AK-Fvc" firstAttribute="leading" secondItem="pQf-aA-oXA" secondAttribute="leadingMargin" id="zVM-3R-3pR"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="encapsulatingView" destination="0cY-AK-Fvc" id="wSQ-eB-yOZ"/>
                                             <outlet property="ingredientsLabel" destination="ZxI-AF-lxu" id="Vsm-Ij-53p"/>
-                                            <outlet property="thumbnailImageView" destination="Nhv-hq-sBJ" id="Zsa-tu-DYQ"/>
                                             <outlet property="titleLabel" destination="H0r-D6-dF0" id="LnJ-fJ-GEP"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="1TI-gW-UWl">
+                            <searchBar contentMode="redraw" placeholder="e.g. kale soup" translatesAutoresizingMaskIntoConstraints="NO" id="1TI-gW-UWl">
                                 <rect key="frame" x="0.0" y="88" width="414" height="44"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="gU0-vQ-tdi"/>
+                                    <constraint firstAttribute="height" constant="44" id="FCR-II-3Gw"/>
                                 </constraints>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
+                            <searchBar contentMode="redraw" placeholder="Ingredients: e.g. kale, tuna, eggs" translatesAutoresizingMaskIntoConstraints="NO" id="Zd6-ru-FAT">
+                                <rect key="frame" x="-2" y="132" width="414" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="xQy-Jj-Ymr"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="yVj-S4-yO4">
+                                <rect key="frame" x="20" y="222" width="374" height="41"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="41" id="PTy-5A-VuI"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="jMR-dH-9nH">
+                                    <size key="itemSize" width="90" height="30"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="IngredientCell" id="Q8A-L5-w5n" customClass="IngredientCell" customModule="FoodieSearch_rx" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="5.5" width="79" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="BBt-0N-iJV">
+                                            <rect key="frame" x="0.0" y="0.0" width="79" height="30"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dkg-7g-f5p">
+                                                    <rect key="frame" x="0.0" y="5" width="79" height="21"/>
+                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                                    <color key="textColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="dkg-7g-f5p" firstAttribute="centerY" secondItem="BBt-0N-iJV" secondAttribute="centerY" id="IUV-dY-iUR"/>
+                                                <constraint firstItem="dkg-7g-f5p" firstAttribute="top" secondItem="BBt-0N-iJV" secondAttribute="top" constant="5" id="IoL-sd-pOh"/>
+                                                <constraint firstItem="dkg-7g-f5p" firstAttribute="centerX" secondItem="BBt-0N-iJV" secondAttribute="centerX" id="Rzy-Km-0Iu"/>
+                                                <constraint firstItem="dkg-7g-f5p" firstAttribute="leading" secondItem="BBt-0N-iJV" secondAttribute="leading" id="UDq-bC-AwN"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="79" height="30"/>
+                                        <connections>
+                                            <outlet property="ingredientLabel" destination="dkg-7g-f5p" id="AcP-ld-zsE"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredient suggestions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MB0-fZ-523">
+                                <rect key="frame" x="20" y="180" width="274" height="34"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="1TI-gW-UWl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="EyR-FR-zcH"/>
-                            <constraint firstItem="1TI-gW-UWl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Ql2-eh-xzt"/>
-                            <constraint firstItem="1TI-gW-UWl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Wa5-ft-JgV"/>
-                            <constraint firstItem="jq2-2D-tRd" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="kbF-Rt-sUw"/>
-                            <constraint firstItem="jq2-2D-tRd" firstAttribute="top" secondItem="1TI-gW-UWl" secondAttribute="bottom" id="o5t-r4-l29"/>
-                            <constraint firstItem="1TI-gW-UWl" firstAttribute="leading" secondItem="jq2-2D-tRd" secondAttribute="leading" id="oWz-JJ-EGn"/>
-                            <constraint firstItem="1TI-gW-UWl" firstAttribute="trailing" secondItem="jq2-2D-tRd" secondAttribute="trailing" id="pSv-At-425"/>
+                            <constraint firstItem="Zd6-ru-FAT" firstAttribute="top" secondItem="1TI-gW-UWl" secondAttribute="bottom" id="4Xe-Ot-flE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Zd6-ru-FAT" secondAttribute="trailing" constant="2" id="6Hm-BD-c4E"/>
+                            <constraint firstItem="MB0-fZ-523" firstAttribute="top" secondItem="Zd6-ru-FAT" secondAttribute="bottom" constant="4" id="BlL-dL-ILW"/>
+                            <constraint firstItem="1TI-gW-UWl" firstAttribute="trailing" secondItem="jq2-2D-tRd" secondAttribute="trailing" id="Pym-tl-L1e"/>
+                            <constraint firstItem="MB0-fZ-523" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="TeC-ep-eUf"/>
+                            <constraint firstItem="MB0-fZ-523" firstAttribute="leading" secondItem="yVj-S4-yO4" secondAttribute="leading" id="Tzi-IA-211"/>
+                            <constraint firstItem="Zd6-ru-FAT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-22" id="aTG-39-ltg"/>
+                            <constraint firstItem="yVj-S4-yO4" firstAttribute="top" secondItem="MB0-fZ-523" secondAttribute="bottom" constant="8" id="f7x-7f-dXj"/>
+                            <constraint firstItem="1TI-gW-UWl" firstAttribute="leading" secondItem="jq2-2D-tRd" secondAttribute="leading" id="jwq-2O-0p5"/>
+                            <constraint firstItem="jq2-2D-tRd" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="lpG-Mz-dOz"/>
+                            <constraint firstItem="1TI-gW-UWl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="nvl-7d-Zft"/>
+                            <constraint firstItem="1TI-gW-UWl" firstAttribute="centerX" secondItem="yVj-S4-yO4" secondAttribute="centerX" id="uX1-5l-nX2"/>
+                            <constraint firstItem="1TI-gW-UWl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="v48-Sd-xBR"/>
+                            <constraint firstItem="yVj-S4-yO4" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="vWf-Wh-guh"/>
+                            <constraint firstItem="jq2-2D-tRd" firstAttribute="top" secondItem="yVj-S4-yO4" secondAttribute="bottom" constant="8" id="yUo-6L-XSj"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="VXe-VD-yj4"/>
                     <navigationItem key="navigationItem" id="iZX-Km-2lV"/>
                     <connections>
+                        <outlet property="ingredientCollectionView" destination="yVj-S4-yO4" id="G7l-Bv-GUM"/>
+                        <outlet property="ingredientSearchBar" destination="Zd6-ru-FAT" id="BAN-92-L46"/>
                         <outlet property="recipeSearchBar" destination="1TI-gW-UWl" id="w97-zM-f5w"/>
                         <outlet property="recipesTableView" destination="jq2-2D-tRd" id="V5W-73-8U0"/>
                     </connections>
@@ -155,7 +223,7 @@
         <!--History-->
         <scene sceneID="RCF-0u-sB0">
             <objects>
-                <viewController id="TpO-iZ-dzT" sceneMemberID="viewController">
+                <viewController id="TpO-iZ-dzT" customClass="HistoryViewController" customModule="FoodieSearch_rx" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bD7-qW-khM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -189,6 +257,5 @@
     <resources>
         <image name="book.fill" catalog="system" width="64" height="50"/>
         <image name="magnifyingglass" catalog="system" width="64" height="56"/>
-        <image name="square.and.arrow.up.on.square.fill" catalog="system" width="58" height="64"/>
     </resources>
 </document>
