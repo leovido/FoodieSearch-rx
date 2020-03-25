@@ -2,3 +2,5 @@ language: swift
 osx_image: xcode11.3
 script:
   - xcodebuild build test -project FoodieSearch-rx.xcodeproj -scheme FoodieSearch-rx -destination 'platform=iOS Simulator,name=iPhone 11,OS=13.3' CODE_SIGNING_REQUIRED=NO
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
