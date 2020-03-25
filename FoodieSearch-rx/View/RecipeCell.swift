@@ -12,7 +12,6 @@ class RecipeCell: UITableViewCell {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var ingredientsLabel: UILabel!
-    @IBOutlet weak var thumbnailImageView: UIImageView!
     @IBOutlet weak var encapsulatingView: UIView!
 
     static var identifier: String = "RecipeCell"
@@ -31,17 +30,6 @@ class RecipeCell: UITableViewCell {
         self.recipe = recipe
         self.titleLabel.text = recipe.title
         self.ingredientsLabel.text = recipe.ingredients
-
-        guard let thumbnail = recipe.thumbnail else {
-            return
-        }
-
-        guard let url = try URL(string: thumbnail) else {
-            return
-        }
-
-        self.thumbnailImageView.image = UIImage(data: url.dataRepresentation)
-
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
