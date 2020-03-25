@@ -18,10 +18,14 @@ struct RecipeViewModel: ViewModelBlueprint {
     typealias Model = Recipe
 
     let disposeBag = DisposeBag()
-    let provider: MoyaProvider<RecipeService> = MoyaProvider(plugins: [NetworkLoggerPlugin()])
+    let provider: MoyaProvider<RecipeService>
 
     let dataSource: BehaviorRelay<[Recipe]> = BehaviorRelay(value: [])
     let errorDataSourcePublisher: PublishSubject<Error> = PublishSubject()
+
+    init(provider: MoyaProvider<RecipeService> = MoyaProvider(plugins: [NetworkLoggerPlugin()])) {
+        self.provider = provider
+    }
 
     func getRecipes(page: Int, ingredients: String, query: String) {
 
