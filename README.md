@@ -1,4 +1,4 @@
-# FoodieSearch-rx
+# FoodieSearch-rx [![Build Status](https://travis-ci.org/kuriishu27/FoodieSearch-rx.svg?branch=master)](https://travis-ci.org/kuriishu27/FoodieSearch-rx)
 Simple application using RxSwift, RxCocoa, Moya with MVVM pattern
 
 Using Swift Package Manager to manage dependencies for faster builds when using CI/CD.
