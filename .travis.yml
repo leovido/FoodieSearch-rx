@@ -1,0 +1,2 @@
+language: swift
+script: xcodebuild test -project FoodieSearch-rx.xcodeproj -scheme FoodieSearch-rx -destination 'platform=iOS Simulator,name=iPhone 11,OS=13.3'
