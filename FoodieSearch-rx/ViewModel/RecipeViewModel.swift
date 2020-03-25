@@ -30,7 +30,7 @@ struct RecipeViewModel: ViewModelBlueprint {
     func getRecipes(page: Int, ingredients: String, query: String) {
 
         provider.rx.request(.getRecipes(page: page, ingredients: ingredients, query: query))
-            .debug("get recipes", trimOutput: true)
+            .debug(#function, trimOutput: true)
             .filterSuccessfulStatusAndRedirectCodes()
             .retry(2)
             .subscribe({ event in
@@ -53,4 +53,5 @@ struct RecipeViewModel: ViewModelBlueprint {
             self.errorDataSourcePublisher.onNext(error)
         }
     }
+
 }
