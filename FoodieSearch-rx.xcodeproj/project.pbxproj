@@ -19,13 +19,15 @@
 		2DAA8B66242BB1C500D682E0 /* RecipeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAA8B65242BB1C500D682E0 /* RecipeError.swift */; };
 		2DAA8B69242BB34100D682E0 /* recipes.json in Resources */ = {isa = PBXBuildFile; fileRef = 2DAA8B68242BB34100D682E0 /* recipes.json */; };
 		2DAA8B6B242BB41700D682E0 /* RecipeCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAA8B6A242BB41700D682E0 /* RecipeCellTests.swift */; };
+		2DAA8B7C242CD5EE00D682E0 /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = 2DAA8B7B242CD5EE00D682E0 /* RxBlocking */; };
+		2DAA8B7E242CD5EE00D682E0 /* RxTest in Frameworks */ = {isa = PBXBuildFile; productRef = 2DAA8B7D242CD5EE00D682E0 /* RxTest */; };
 		2DAB22F6242A8976001C0F6E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAB22F5242A8976001C0F6E /* AppDelegate.swift */; };
 		2DAB22F8242A8976001C0F6E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAB22F7242A8976001C0F6E /* SceneDelegate.swift */; };
 		2DAB22FA242A8976001C0F6E /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAB22F9242A8976001C0F6E /* RecipeViewController.swift */; };
 		2DAB22FD242A8976001C0F6E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DAB22FB242A8976001C0F6E /* Main.storyboard */; };
 		2DAB22FF242A8978001C0F6E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DAB22FE242A8978001C0F6E /* Assets.xcassets */; };
 		2DAB2302242A8978001C0F6E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DAB2300242A8978001C0F6E /* LaunchScreen.storyboard */; };
-		2DAB230D242A8978001C0F6E /* FoodieSearch_rxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAB230C242A8978001C0F6E /* FoodieSearch_rxTests.swift */; };
+		2DAB230D242A8978001C0F6E /* RecipeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAB230C242A8978001C0F6E /* RecipeViewModelTests.swift */; };
 		2DAB231C242A8C63001C0F6E /* RecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAB231B242A8C63001C0F6E /* RecipeCell.swift */; };
 		2DAB231E242A8CEC001C0F6E /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAB231D242A8CEC001C0F6E /* Recipe.swift */; };
 /* End PBXBuildFile section */
@@ -58,7 +60,7 @@
 		2DAB2301242A8978001C0F6E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2DAB2303242A8978001C0F6E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2DAB2308242A8978001C0F6E /* FoodieSearch-rxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "FoodieSearch-rxTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2DAB230C242A8978001C0F6E /* FoodieSearch_rxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodieSearch_rxTests.swift; sourceTree = "<group>"; };
+		2DAB230C242A8978001C0F6E /* RecipeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewModelTests.swift; sourceTree = "<group>"; };
 		2DAB230E242A8978001C0F6E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2DAB231B242A8C63001C0F6E /* RecipeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCell.swift; sourceTree = "<group>"; };
 		2DAB231D242A8CEC001C0F6E /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
@@ -73,6 +75,8 @@
 				2D201B92242A8FD400BAD11F /* RxSwift in Frameworks */,
 				2D201B99242A904D00BAD11F /* RxMoya in Frameworks */,
 				2D201B97242A904D00BAD11F /* Moya in Frameworks */,
+				2DAA8B7E242CD5EE00D682E0 /* RxTest in Frameworks */,
+				2DAA8B7C242CD5EE00D682E0 /* RxBlocking in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,12 +122,20 @@
 			path = Fixtures;
 			sourceTree = "<group>";
 		};
+		2DAA8B72242CD11500D682E0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		2DAB22E9242A8976001C0F6E = {
 			isa = PBXGroup;
 			children = (
 				2DAB22F4242A8976001C0F6E /* FoodieSearch-rx */,
 				2DAB230B242A8978001C0F6E /* FoodieSearch-rxTests */,
 				2DAB22F3242A8976001C0F6E /* Products */,
+				2DAA8B72242CD11500D682E0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -159,7 +171,7 @@
 		2DAB230B242A8978001C0F6E /* FoodieSearch-rxTests */ = {
 			isa = PBXGroup;
 			children = (
-				2DAB230C242A8978001C0F6E /* FoodieSearch_rxTests.swift */,
+				2DAB230C242A8978001C0F6E /* RecipeViewModelTests.swift */,
 				2DAA8B6A242BB41700D682E0 /* RecipeCellTests.swift */,
 				2DAA8B67242BB32E00D682E0 /* Fixtures */,
 				2DAB230E242A8978001C0F6E /* Info.plist */,
@@ -222,6 +234,8 @@
 				2D201B93242A8FD400BAD11F /* RxCocoa */,
 				2D201B96242A904D00BAD11F /* Moya */,
 				2D201B98242A904D00BAD11F /* RxMoya */,
+				2DAA8B7B242CD5EE00D682E0 /* RxBlocking */,
+				2DAA8B7D242CD5EE00D682E0 /* RxTest */,
 			);
 			productName = "FoodieSearch-rx";
 			productReference = 2DAB22F2242A8976001C0F6E /* FoodieSearch-rx.app */;
@@ -241,6 +255,8 @@
 				2DAB230A242A8978001C0F6E /* PBXTargetDependency */,
 			);
 			name = "FoodieSearch-rxTests";
+			packageProductDependencies = (
+			);
 			productName = "FoodieSearch-rxTests";
 			productReference = 2DAB2308242A8978001C0F6E /* FoodieSearch-rxTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -331,7 +347,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2DAB230D242A8978001C0F6E /* FoodieSearch_rxTests.swift in Sources */,
+				2DAB230D242A8978001C0F6E /* RecipeViewModelTests.swift in Sources */,
 				2DAA8B6B242BB41700D682E0 /* RecipeCellTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -631,6 +647,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2D201B95242A904D00BAD11F /* XCRemoteSwiftPackageReference "Moya" */;
 			productName = RxMoya;
+		};
+		2DAA8B7B242CD5EE00D682E0 /* RxBlocking */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2D201B90242A8FD400BAD11F /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxBlocking;
+		};
+		2DAA8B7D242CD5EE00D682E0 /* RxTest */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2D201B90242A8FD400BAD11F /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxTest;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
