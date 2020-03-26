@@ -78,28 +78,30 @@ class RecipeViewModelTests: XCTestCase {
 
     }
 
-}
+    private func makeMoyaStub<T: TargetType>(statusError: Int) -> MoyaProvider<T> {
 
-private func makeMoyaStub<T: TargetType>(statusError: Int) -> MoyaProvider<T> {
+        let bundle = Bundle(for: type(of: self) as! AnyClass)
 
-    let bundle = Bundle(for: type(of: self) as! AnyClass)
+        let url = bundle.url(forResource: "recipes", withExtension: "json")!
+        let data = try! Data(contentsOf: url)
 
-    let url = bundle.url(forResource: "recipes", withExtension: "json")!
-    let data = try! Data(contentsOf: url)
+        let serverEndpointSuccess = { (target: T) -> Endpoint in
+            return Endpoint(url: URL(target: target).absoluteString,
+                            sampleResponseClosure: { .networkResponse(statusError, data) },
+                            method: target.method,
+                            task: target.task,
+                            httpHeaderFields: target.headers)
+        }
 
-    let serverEndpointSuccess = { (target: T) -> Endpoint in
-        return Endpoint(url: URL(target: target).absoluteString,
-                        sampleResponseClosure: { .networkResponse(statusError, data) },
-                        method: target.method,
-                        task: target.task,
-                        httpHeaderFields: target.headers)
+        let serverStubSuccess = MoyaProvider<T>(
+            endpointClosure: serverEndpointSuccess,
+            stubClosure: MoyaProvider.immediatelyStub
+        )
+
+        return serverStubSuccess
+
     }
 
-    let serverStubSuccess = MoyaProvider<T>(
-        endpointClosure: serverEndpointSuccess,
-        stubClosure: MoyaProvider.immediatelyStub
-    )
-
-    return serverStubSuccess
-
 }
+
+
