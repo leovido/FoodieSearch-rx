@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Recipe: Decodable {
+struct Recipe: Decodable, Equatable {
     var title: String
     var href: URL?
     var ingredients: String
