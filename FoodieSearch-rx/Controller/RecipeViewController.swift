@@ -86,8 +86,8 @@ class RecipeViewController: UIViewController {
     func setupBindings() {
 
         viewModel.dataSource
-        .asObservable()
-            .bind(to: recipesTableView.rx.items(cellIdentifier: RecipeCell.identifier,
+        .asDriver(onErrorJustReturn: [])
+            .drive(recipesTableView.rx.items(cellIdentifier: RecipeCell.identifier,
                                                 cellType: RecipeCell.self)) { _, element, cell in
 
                 cell.configureCell(recipe: element)
